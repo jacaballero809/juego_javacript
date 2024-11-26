@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de TRIKI</title>
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #303030; /* Color de fondo oscuro */
+    height: 100vh; /* Establecer el 100% de la altura de la ventana del navegador */
+    display: flex; /* Usar flexbox para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+
+.container {
+    text-align: center; /* Centrar el contenido del contenedor */
+    background-color: rgba(255, 255, 255, 0.7); /* Color de fondo semi-transparente para el contenedor */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+}
+h1 {
+    font-size: 48px; 
+    margin-bottom: 20px; 
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin: 10px; 
+    display: inline-block; /* Hacer que los botones sean elementos en línea */
+    margin-right: 10px; /* Margen derecho para separar los botones */
+}
+
+.buttons button:hover {
+    background-color: #45a049; 
+}
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+            width: max-content;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        #mode {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #stats {
+            margin-top: 20px;
+        }
+       button {
+       padding: 10px 20px;
+       font-size: 16px;
+       background-color: #4CAF50; 
+       color: white; 
+       border: none; 
+       border-radius: 5px; 
+       cursor: pointer;
+       margin: 10px auto; 
+       display: block; 
+       display: inline-block; /* Hacer que los botones sean elementos en línea */
+       margin-right: 10px; /* Margen derecho para separar los botones */
+}
+
+button:hover {
+    background-color: #45a049; /* Cambiar color de fondo al pasar el mouse */
+}
+    </style>
+</head>
+<body>
+<div class="container">
+        <h1>Juego de TRIKI</h1>
+        <div class="buttons">
+    <div id="game">
+        <div>
+            <button id="pvp">Jugador vs Jugador</button> 
+            <button id="pvc">Jugador vs Máquina</button>
+            
+        </div>
+    </div>
+</div>
+
+        <div id="mode" class="hidden">Modo de juego: <span id="gameMode"></span></div>
+        <div class="board hidden" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div id="stats" class="hidden">
+            <h2>Estadísticas</h2>
+            <ul>
+                <li id="mostWins">Jugador con más partidas ganadas: </li>
+                <li id="mostLosses">Jugador con más partidas perdidas: </li>
+                <li id="totalGames">Total de juegos cerrados: </li>
+            </ul>
+        </div>
+        <button id="reset" class="hidden">Reiniciar Tablero</button>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
